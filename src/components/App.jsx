@@ -83,9 +83,7 @@ export class App extends Component {
 
   // =======================================================================
 
-  render() {
-    const { good, neutral, bad } = this.state;
-
+  render({ good, neutral, bad } = this.state) {
     const countTotalFeedback = () => {
       return good + neutral + bad;
     };
