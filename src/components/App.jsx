@@ -1,55 +1,15 @@
 import { Component } from 'react';
-import {
-  Container,
-  Title,
-  BtnWrapper,
-  Btn,
-  InfoWrapper,
-  SubTitle,
-  Text,
-  Notify,
-} from './App.styled';
+import { Section } from './section/Section';
+import { FeedbackOptions } from './feedback-options/FeedbackOptions';
+import { Statistics } from './statistics/Statistics';
+import { Notify } from './App.styled';
 
-// =======================================================================
-
-const Section = ({ title, children }) => {
-  return (
-    <Container>
-      <Title>{title}</Title>
-      {children}
-    </Container>
-  );
-};
-
+// Не впевнений чи варто цей компонент звідси прибрати як і решту, тому залишив його тут
 const Notification = ({ message }) => {
   return <Notify>{message}</Notify>;
 };
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  return (
-    <BtnWrapper>
-      <Btn onClick={onLeaveFeedback.good}>{options.good}</Btn>
-      <Btn onClick={onLeaveFeedback.neutral}>{options.neutral}</Btn>
-      <Btn onClick={onLeaveFeedback.bad}>{options.bad}</Btn>
-    </BtnWrapper>
-  );
-};
-
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
-  return (
-    <InfoWrapper>
-      <SubTitle>Statistics</SubTitle>
-      <Text>Good: {good}</Text>
-      <Text>Neutral: {neutral}</Text>
-      <Text>Bad: {bad}</Text>
-      <Text>Total: {total}</Text>
-      <Text>Positive_Feed: %''{positivePercentage}</Text>
-    </InfoWrapper>
-  );
-};
-
-// =====================================================================
-
+// ===============================================================
 export class App extends Component {
   state = {
     good: 0,
@@ -81,16 +41,14 @@ export class App extends Component {
     });
   };
 
-  // =======================================================================
-
   render({ good, neutral, bad } = this.state) {
-    const countTotalFeedback = () => {
-      return good + neutral + bad;
-    };
+    //===========================================================
+    const countTotalFeedback = () => good + neutral + bad;
 
-    const countPositiveFeedbackPercentage = () => {
-      return Math.round((good * 100) / countTotalFeedback());
-    };
+    const countPositiveFeedbackPercentage = () =>
+      Math.round((good * 100) / countTotalFeedback());
+
+    // ==========================================================
 
     return (
       <Section title="Please leave feedback">
