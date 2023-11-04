@@ -23,6 +23,8 @@ export const GlobalStyle = createGlobalStyle`
   button
   {
     font: inherit;
+    outline-style: none;
+    outline-color: transparent;
   }
 
   h1,
@@ -30,6 +32,6 @@ export const GlobalStyle = createGlobalStyle`
   p {
     margin: 0;
     padding: 0;
-  };
+  }
 }
 `;
