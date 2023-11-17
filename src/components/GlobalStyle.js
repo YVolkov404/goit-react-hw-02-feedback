@@ -14,14 +14,15 @@ export const GlobalStyle = createGlobalStyle`
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+  }
+
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  button
-  {
+  button {
     font: inherit;
     outline-style: none;
     outline-color: transparent;
@@ -33,5 +34,4 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-}
 `;
