@@ -11,6 +11,7 @@ export const Btn = styled.button`
   padding: 15px 55px;
   font-weight: 700;
   font-size: 24px;
+  text-transform: capitalize;
   color: black;
   background-color: blanchedalmond;
   border: none;
